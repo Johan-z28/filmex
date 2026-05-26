@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmex</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon/icon.svg">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/filmex_logo.svg" alt="logo">
+        </div>
+
+        <nav class="d-flex align-items-center gap-2">
+            <ul class="nav__links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="peliculas.html">Películas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre_mi.html" class="selected">Sobre mi</a></li>
+            </ul>
+
+            <ul class="nav__cesde">
+                <li><a href="formulario.html">Formulario</a></li>
+                <li><a href="base_datos.html">Base de Datos</a></li>
+                <li><a href="logica.html">Lógica</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" class="search__input" placeholder="Buscar...">
+            <button class="search__btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__left">
+                <div class="footer__logo">
+                    <img src="assets/filmex_logo.svg" alt="logo">
+                </div>
+                <a href="#">Información legal</a>
+                <a href="#">Contáctenos para PQRS</a>
+                <a href="#">Preguntas frecuentes</a>
+            </div>
+
+            <div class="footer__right">
+                <h2>Suscríbete y se un Film-Fans</h2>
+                <form action="">
+                    <label for="lcorreo">Conoce los descuentos que tenemos para ti.</label>
+                    <div class="footer__row">
+                        <input type="email" name="correo" id="lcorreo" placeholder="Escribe tu correo...">
+                        <button type="submit">Suscribirse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer__center">
+            <p>Derechos reservados © 2025 Filmex</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -191,31 +191,288 @@ nav {
     transform: scale(1.1);
 }
 
-/** CATERGORIA **/
-.categoria {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 50px;
-    padding: 10px;
+/** CRUD **/
+.crud__wrapper {
+    max-width: 1000px;
+    margin: 100px auto 60px;
+    padding: 0 20px;
 }
 
-.categoria a {
-    color: #D1D2D4;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 8px 20px;
-    border-radius: 50px;
-    transition: all 0.3s;
-}
-
-.categoria a:hover {
+.crud__title {
     color: #F9FAFB;
-    background-color: #7C3AED;
-    transform: scale(1.05);
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 6px;
 }
 
+.crud__subtitle {
+    color: #787878;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+.crud__code {
+    color: #925FEA;
+    font-size: 13px;
+}
+
+/** Secciones C / R / U / D **/
+.crud__section {
+    background-color: rgba(58, 58, 58, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #3a3a3a;
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+}
+
+.crud__section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.crud__section-title {
+    color: #F9FAFB;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.crud__section-sub {
+    color: #555;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 4px 0 0;
+    font-family: monospace;
+}
+
+/** Badges C R U D **/
+.crud__badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.crud__badge--crear     { background-color: rgba(146, 95, 234, 0.15); color: #925FEA; }
+.crud__badge--leer      { background-color: rgba(29, 185, 115, 0.15); color: #1DB973; }
+.crud__badge--actualizar{ background-color: rgba(231, 161, 29, 0.15); color: #E7A11D; }
+.crud__badge--borrar    { background-color: rgba(231, 29, 115, 0.15); color: #E71D73; }
+
+/** Inputs **/
+.crud__label {
+    color: #D1D2D4;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.crud__required {
+    color: #E71D73;
+}
+
+.crud__input {
+    width: 100%;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 10px;
+    padding: 10px 14px;
+    color: #F9FAFB;
+    font-size: 13px;
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 4px;
+}
+
+.crud__input:focus {
+    border-color: #925FEA;
+}
+
+.crud__input::placeholder {
+    color: #555;
+}
+
+.crud__input option {
+    background-color: #2a2a2a;
+    color: #F9FAFB;
+}
+
+.crud__input--disabled {
+    color: #555;
+    cursor: not-allowed;
+}
+
+.crud__input--highlight {
+    border-color: #925FEA;
+}
+
+.crud__input--danger {
+    border-color: #E71D73;
+}
+
+.crud__hint {
+    color: #555;
+    font-size: 11px;
+    font-weight: 300;
+    margin: 0 0 12px;
+}
+
+/** Botones **/
+.crud__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.crud__btn {
+    border: none;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.crud__btn--crear {
+    background-color: #925FEA;
+    color: #fff;
+}
+
+.crud__btn--crear:hover {
+    background-color: #7C3AED;
+    transform: scale(1.03);
+}
+
+.crud__btn--actualizar {
+    background-color: transparent;
+    border: 1px solid #E7A11D;
+    color: #E7A11D;
+}
+
+.crud__btn--actualizar:hover {
+    background-color: #E7A11D;
+    color: #1A1A1A;
+    transform: scale(1.03);
+}
+
+.crud__btn--borrar {
+    background-color: transparent;
+    border: 1px solid #E71D73;
+    color: #E71D73;
+}
+
+.crud__btn--borrar:hover {
+    background-color: #E71D73;
+    color: #fff;
+    transform: scale(1.03);
+}
+
+.crud__btn--limpiar {
+    background-color: transparent;
+    border: 1px solid #3a3a3a;
+    color: #787878;
+}
+
+.crud__btn--limpiar:hover {
+    border-color: #D1D2D4;
+    color: #D1D2D4;
+}
+
+/** Tabla **/
+.crud__table-wrap {
+    overflow-x: auto;
+}
+
+.crud__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.crud__table th {
+    color: #787878;
+    font-weight: 400;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #3a3a3a;
+    white-space: nowrap;
+}
+
+.crud__table td {
+    color: #D1D2D4;
+    padding: 12px 12px;
+    border-bottom: 1px solid #2a2a2a;
+    vertical-align: middle;
+}
+
+.crud__table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.crud__table tbody tr:hover td {
+    background-color: rgba(146, 95, 234, 0.05);
+}
+
+.crud__badge-gender {
+    background-color: rgba(146, 95, 234, 0.15);
+    color: #925FEA;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.crud__badge-type {
+    background-color: rgba(29, 185, 115, 0.12);
+    color: #1DB973;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+.crud__row-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.crud__btn--editar,
+.crud__btn--borrar {
+    border: none;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.crud__btn--editar {
+    background-color: rgba(146, 95, 234, 0.15);
+    color: #925FEA;
+}
+
+.crud__btn--editar:hover {
+    background-color: #925FEA;
+    color: #fff;
+}
 
 /** FOOTER **/
 .footer {
@@ -331,30 +588,6 @@ nav {
     text-align: center;
 }
 
-.carousel-item img {
-    display: block;
-    width: 100%;
-    height: 650px; 
-    object-fit: cover;
-    object-position: center;
-}
-
 .header nav ul {
     margin-bottom: 0;
-}
-
-#carruselFilmex {
-    position: relative;
-}
-
-#carruselFilmex::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;           /* qué tan alto sube el desvanecido */
-    background: linear-gradient(to bottom, transparent, #1A1A1A);
-    pointer-events: none;    /* para que no bloquee los controles del carrusel */
-    z-index: 2;
 }

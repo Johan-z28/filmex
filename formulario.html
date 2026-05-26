@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmex</title>
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="icon" type="image/svg+xml" href="favicon/icon.svg">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/filmex_logo.svg" alt="logo">
+        </div>
+
+        <nav class="d-flex align-items-center gap-2">
+            <ul class="nav__links">
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="peliculas.html">Películas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre_mi.html">Sobre mi</a></li>
+            </ul>
+
+            <ul class="nav__cesde">
+                <li><a href="formulario.html" class="selected">Formulario</a></li>
+                <li><a href="base_datos.html">Base de Datos</a></li>
+                <li><a href="logica.html">Lógica</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" class="search__input" placeholder="Buscar...">
+            <button class="search__btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="crud__wrapper">
+
+        <h1 class="crud__title">Gestión de Clientes</h1>
+        <p class="crud__subtitle">Operaciones CRUD sobre la tabla <code class="crud__code">tbl_customers</code></p>
+
+        <!-- ── SECCIÓN CREAR ── -->
+        <div class="crud__section">
+            <div class="crud__section-header">
+                <span class="crud__badge crud__badge--crear">C</span>
+                <div>
+                    <h2 class="crud__section-title">Crear cliente</h2>
+                    <p class="crud__section-sub">INSERT INTO tbl_customers</p>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="crud__label" for="c_nombre">Nombre completo <span
+                            class="crud__required">*</span></label>
+                    <input class="crud__input" type="text" id="c_nombre" placeholder="Ej: María García López"
+                        maxlength="150">
+                </div>
+                <div class="col-md-6">
+                    <label class="crud__label" for="c_email">Correo electrónico</label>
+                    <input class="crud__input" type="email" id="c_email" placeholder="Ej: maria@correo.com">
+                    <p class="crud__hint">UNIQUE — puede dejarse vacío</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="crud__label" for="c_tel">Teléfono</label>
+                    <input class="crud__input" type="tel" id="c_tel" placeholder="Ej: 3001234567" maxlength="10">
+                    <p class="crud__hint">Máximo 10 dígitos</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="crud__label" for="c_genero">Género <span class="crud__required">*</span></label>
+                    <select class="crud__input" id="c_genero">
+                        <option value="" disabled selected>Seleccionar...</option>
+                        <option value="M">M — Masculino</option>
+                        <option value="F">F — Femenino</option>
+                        <option value="O">O — Otro</option>
+                    </select>
+                    <p class="crud__hint">FK → tbl_genders</p>
+                </div>
+                <div class="col-md-4">
+                    <label class="crud__label" for="c_nacimiento">Fecha de nacimiento <span
+                            class="crud__required">*</span></label>
+                    <input class="crud__input" type="date" id="c_nacimiento">
+                </div>
+                <div class="col-md-6">
+                    <label class="crud__label" for="c_tipo">Tipo de cliente <span
+                            class="crud__required">*</span></label>
+                    <select class="crud__input" id="c_tipo">
+                        <option value="" disabled selected>Seleccionar...</option>
+                        <option value="1">Frecuente</option>
+                        <option value="2">Niño</option>
+                        <option value="3">Adulto</option>
+                        <option value="4">Estudiante</option>
+                    </select>
+                    <p class="crud__hint">FK → tbl_typeCustomers</p>
+                </div>
+                <div class="col-md-6">
+                    <label class="crud__label">Fecha de creación</label>
+                    <input class="crud__input crud__input--disabled" type="text"
+                        value="Se genera automáticamente (TIMESTAMP)" disabled>
+                    <p class="crud__hint">DEFAULT CURRENT_TIMESTAMP</p>
+                </div>
+            </div>
+
+            <div class="crud__actions">
+                <button class="crud__btn crud__btn--crear">Insertar registro</button>
+                <button class="crud__btn crud__btn--limpiar">Limpiar campos</button>
+            </div>
+        </div>
+
+        <!-- ── SECCIÓN LEER ── -->
+        <div class="crud__section">
+            <div class="crud__section-header">
+                <span class="crud__badge crud__badge--leer">R</span>
+                <div>
+                    <h2 class="crud__section-title">Leer clientes</h2>
+                    <p class="crud__section-sub">SELECT * FROM tbl_customers</p>
+                </div>
+            </div>
+
+            <div class="crud__table-wrap">
+                <table class="crud__table">
+                    <thead>
+                        <tr>
+                            <th>Fecha creación</th>
+                            <th>Nombre completo</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Género</th>
+                            <th>Nacimiento</th>
+                            <th>Tipo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025-01-15 10:32</td>
+                            <td>María García López</td>
+                            <td>maria@correo.com</td>
+                            <td>3001234567</td>
+                            <td><span class="crud__badge-gender">F</span></td>
+                            <td>1998-04-22</td>
+                            <td><span class="crud__badge-type">Estudiante</span></td>
+                            <td>
+                                <div class="crud__row-actions">
+                                    <button class="crud__btn--editar">Editar</button>
+                                    <button class="crud__btn--borrar">Borrar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-02-03 14:10</td>
+                            <td>Carlos Ramírez</td>
+                            <td>—</td>
+                            <td>3119876543</td>
+                            <td><span class="crud__badge-gender">M</span></td>
+                            <td>1985-11-09</td>
+                            <td><span class="crud__badge-type">Frecuente</span></td>
+                            <td>
+                                <div class="crud__row-actions">
+                                    <button class="crud__btn--editar">Editar</button>
+                                    <button class="crud__btn--borrar">Borrar</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-20 09:05</td>
+                            <td>Sofía Mendoza</td>
+                            <td>sofi@mail.com</td>
+                            <td>—</td>
+                            <td><span class="crud__badge-gender">F</span></td>
+                            <td>2015-07-30</td>
+                            <td><span class="crud__badge-type">Niño</span></td>
+                            <td>
+                                <div class="crud__row-actions">
+                                    <button class="crud__btn--editar">Editar</button>
+                                    <button class="crud__btn--borrar">Borrar</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── SECCIÓN ACTUALIZAR ── -->
+        <div class="crud__section">
+            <div class="crud__section-header">
+                <span class="crud__badge crud__badge--actualizar">U</span>
+                <div>
+                    <h2 class="crud__section-title">Actualizar cliente</h2>
+                    <p class="crud__section-sub">UPDATE tbl_customers SET ... WHERE email = ?</p>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-12">
+                    <label class="crud__label" for="u_email">Correo del cliente a actualizar <span
+                            class="crud__required">*</span></label>
+                    <input class="crud__input crud__input--highlight" type="email" id="u_email"
+                        placeholder="Ej: maria@correo.com">
+                    <p class="crud__hint">Se usa como identificador para encontrar el registro</p>
+                </div>
+                <div class="col-md-6">
+                    <label class="crud__label" for="u_nombre">Nuevo nombre completo</label>
+                    <input class="crud__input" type="text" id="u_nombre" placeholder="Dejar vacío para no modificar"
+                        maxlength="150">
+                </div>
+                <div class="col-md-6">
+                    <label class="crud__label" for="u_tel">Nuevo teléfono</label>
+                    <input class="crud__input" type="tel" id="u_tel" placeholder="Dejar vacío para no modificar"
+                        maxlength="10">
+                </div>
+                <div class="col-md-4">
+                    <label class="crud__label" for="u_genero">Nuevo género</label>
+                    <select class="crud__input" id="u_genero">
+                        <option value="" selected>Sin cambios</option>
+                        <option value="M">M — Masculino</option>
+                        <option value="F">F — Femenino</option>
+                        <option value="O">O — Otro</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="crud__label" for="u_nacimiento">Nueva fecha de nacimiento</label>
+                    <input class="crud__input" type="date" id="u_nacimiento">
+                </div>
+                <div class="col-md-4">
+                    <label class="crud__label" for="u_tipo">Nuevo tipo de cliente</label>
+                    <select class="crud__input" id="u_tipo">
+                        <option value="" selected>Sin cambios</option>
+                        <option value="1">Frecuente</option>
+                        <option value="2">Niño</option>
+                        <option value="3">Adulto</option>
+                        <option value="4">Estudiante</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="crud__actions">
+                <button class="crud__btn crud__btn--actualizar">Actualizar registro</button>
+                <button class="crud__btn crud__btn--limpiar">Limpiar campos</button>
+            </div>
+        </div>
+
+        <!-- ── SECCIÓN BORRAR ── -->
+        <div class="crud__section">
+            <div class="crud__section-header">
+                <span class="crud__badge crud__badge--borrar">D</span>
+                <div>
+                    <h2 class="crud__section-title">Borrar cliente</h2>
+                    <p class="crud__section-sub">DELETE FROM tbl_customers WHERE email = ?</p>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label class="crud__label" for="d_email">Correo del cliente a eliminar <span
+                            class="crud__required">*</span></label>
+                    <input class="crud__input crud__input--danger" type="email" id="d_email"
+                        placeholder="Ej: maria@correo.com">
+                    <p class="crud__hint">Esta acción no se puede deshacer</p>
+                </div>
+            </div>
+
+            <div class="crud__actions">
+                <button class="crud__btn crud__btn--borrar">Eliminar registro</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__left">
+                <div class="footer__logo">
+                    <img src="assets/filmex_logo.svg" alt="logo">
+                </div>
+                <a href="#">Información legal</a>
+                <a href="#">Contáctenos para PQRS</a>
+                <a href="#">Preguntas frecuentes</a>
+            </div>
+
+            <div class="footer__right">
+                <h2>Suscríbete y se un Film-Fans</h2>
+                <form action="">
+                    <label for="lcorreo">Conoce los descuentos que tenemos para ti.</label>
+                    <div class="footer__row">
+                        <input type="email" name="correo" id="lcorreo" placeholder="Escribe tu correo...">
+                        <button type="submit">Suscribirse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer__center">
+            <p>Derechos reservados © 2025 Filmex</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

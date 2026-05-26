@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon/icon.svg">
+</head>
+
+<body>
+
+    <!-- Carrusel Bootstrap -->
+    <div id="carruselFilmex" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="img/banner_crispetas.png" class="d-block w-100" alt="Banner Crispetas">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/banner_persona.png" class="d-block w-100" alt="Banner Persona">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/banner_sala.png" class="d-block w-100" alt="Banner Sala">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselFilmex" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselFilmex" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/filmex_logo.svg" alt="logo">
+        </div>
+
+        <nav class="d-flex align-items-center gap-2">
+            <ul class="nav__links">
+                <li><a href="inicio.html" class="selected">Inicio</a></li>
+                <li><a href="peliculas.html">Películas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="sobre_mi.html">Sobre mi</a></li>
+            </ul>
+
+            <ul class="nav__cesde">
+                <li><a href="formulario.html">Formulario</a></li>
+                <li><a href="base_datos.html">Base de Datos</a></li>
+                <li><a href="logica.html">Lógica</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" class="search__input" placeholder="Buscar...">
+            <button class="search__btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="categoria">
+        <a href="#">Cartelera</a>
+        <a href="#">Preventa</a>
+        <a href="#">Estrenos</a>
+        <a href="#">Pronto</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="footer__left">
+                <div class="footer__logo">
+                    <img src="assets/filmex_logo.svg" alt="logo">
+                </div>
+                <a href="#">Información legal</a>
+                <a href="#">Contáctenos para PQRS</a>
+                <a href="#">Preguntas frecuentes</a>
+            </div>
+
+            <div class="footer__right">
+                <h2>Suscríbete y se un Film-Fans</h2>
+                <form action="">
+                    <label for="lcorreo">Conoce los descuentos que tenemos para ti.</label>
+                    <div class="footer__row">
+                        <input type="email" name="correo" id="lcorreo" placeholder="Escribe tu correo...">
+                        <button type="submit">Suscribirse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer__center">
+            <p>Derechos reservados © 2025 Filmex</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
