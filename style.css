@@ -96,12 +96,16 @@ nav {
 }
 
 .nav__links a.selected {
-    color: #F9FAFB;
+    color: #d9d9d9;
     padding: 9px 9px;
     background-color: rgba(249, 250, 251, 0.3);
     border: none;
     border-radius: 80px;
     transform: none;
+}
+
+.nav__links a.selected:hover {
+    color: #F9FAFB;
 }
 
 /** NAV CESDE **/
@@ -135,8 +139,13 @@ nav {
 }
 
 .nav__cesde a.selected {
+    color: #d9d9d9;
+}
+
+.nav__cesde a.selected:hover {
     color: #F9FAFB;
 }
+
 
 /** SEARCH **/
 .search {
@@ -182,21 +191,16 @@ nav {
     transform: scale(1.1);
 }
 
-.banner {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    object-position: center top; /* enfoca la parte de arriba donde están los personajes */
-}
+
 
 /** FOOTER **/
 .footer {
     background-image: linear-gradient(#1A1A1A, #7C3AED);
-    padding: 60px 8% 30px;
+    padding: 30px 8% 20px;
     margin-top: 15px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 .footer__top {
@@ -222,7 +226,7 @@ nav {
 }
 
 .footer__logo img {
-    width: 400px;
+    width: 250px;
 }
 
 .footer__left a {
@@ -301,4 +305,16 @@ nav {
     font-size: 13px;
     font-weight: 300;
     text-align: center;
+}
+
+.carousel-item img {
+    display: block;
+    width: 100%;
+    height: 650px; 
+    object-fit: cover;
+    object-position: center;
+}
+
+.header nav ul {
+    margin-bottom: 0;
 }
