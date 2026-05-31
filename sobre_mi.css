@@ -30,7 +30,7 @@ body {
     background-color: #1A1A1A;
 }
 
-/** ---------- HEADER ---------- **/
+/** HEADER **/
 .header {
     background-color: rgba(58, 58, 58,0.6);
     backdrop-filter: blur(12px);
@@ -61,7 +61,7 @@ body {
     transform: scale(1.2);
 }
 
-/** ---------- NAV ---------- **/
+/** NAV **/
 nav {
     display: flex;
     align-items: center;
@@ -191,107 +191,99 @@ nav {
     transform: scale(1.1);
 }
 
-/** ---------- CRUD ---------- **/
-.crud {
-    max-width: 800px;
-    margin: 100px auto 60px;
-    padding: 0 20px;
-}
-
-.crud__titulo {
-    color: #F9FAFB;
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 24px;
-}
-
-.crud__form {
-    background-color: rgba(58, 58, 58, 0.5);
-    border: 1px solid #3a3a3a;
-    border-radius: 16px;
-    padding: 28px;
-}
-
-.crud__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-}
-
-.crud__campo label {
-    display: block;
-    color: #D1D2D4;
-    font-size: 13px;
-    font-weight: 300;
-    margin-bottom: 6px;
-}
-
-.crud__campo input,
-.crud__campo select {
+.sobre-mi {
+    padding: 120px 6% 80px;
+    max-width: 1100px;
+    margin: 0 auto;
     width: 100%;
-    background-color: #2a2a2a;
-    border: 1px solid #3a3a3a;
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: #F9FAFB;
-    font-size: 13px;
-    font-family: Inter, sans-serif;
-    outline: none;
 }
 
-.crud__campo input:focus,
-.crud__campo select:focus {
-    border-color: #925FEA;
+.sobre-mi__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 60px;
+    align-items: start;
 }
 
-.crud__campo input::placeholder {
-    color: #555;
-}
-
-.crud__campo select option {
-    background-color: #2a2a2a;
-}
-
-.crud__botones {
+.sobre-mi__foto {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
-.crud__botones button {
-    border: none;
-    border-radius: 50px;
-    padding: 10px 24px;
-    font-size: 13px;
-    font-family: Inter, sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.crud__botones button:nth-child(1) {
-    background-color: #925FEA;
+.sobre-mi__avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6, #E71D73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
     color: #fff;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
 }
 
-.crud__botones button:nth-child(2) {
-    background-color: transparent;
-    border: 1px solid #555;
-    color: #D1D2D4;
+.sobre-mi__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 50px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #8B5CF6;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
 }
 
-.crud__botones button:nth-child(3) {
-    background-color: transparent;
-    border: 1px solid #E7A11D;
-    color: #E7A11D;
+.sobre-mi__label::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    display: block;
 }
 
-.crud__botones button:nth-child(4) {
-    background-color: transparent;
-    border: 1px solid #E71D73;
-    color: #E71D73;
+.sobre-mi__titulo {
+    font-size: 38px;
+    font-weight: 700;
+    color: #F0EEF8;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
-/** ---------- FOOTER ---------- **/
+.sobre-mi__nombre {
+    background: linear-gradient(135deg, #8B5CF6, #E71D73);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sobre-mi__texto {
+    font-size: 15px;
+    color: #A0A0B0;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    max-width: 620px;
+}
+
+.sobre-mi__gracias {
+    color: #8B5CF6;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+
+/** FOOTER **/
 .footer {
     background-image: linear-gradient(#1A1A1A, #7C3AED);
     padding: 30px 8% 20px;
@@ -430,22 +422,6 @@ nav {
     font-size: 13px;
     font-weight: 300;
     text-align: center;
-}
-
-.carousel-item img {
-    display: block;
-    width: 100%;
-    height: 650px; 
-    object-fit: cover;
-    object-position: center;
-}
-
-.header nav ul {
-    margin-bottom: 0;
-}
-
-#carruselFilmex {
-    position: relative;
 }
 
 .header nav ul {

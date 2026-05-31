@@ -1,0 +1,70 @@
+.logica {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 150px 2rem;
+}
+
+.logica__titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #F9FAFB;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.logica__desc {
+    color: #9CA3AF;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.logica__code-block {
+    background: #0D1220;
+    border: 1px solid #1E2A40;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logica__code-header {
+    background: #111827;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #1E2A40;
+}
+
+.logica__dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot--red    { background: #EF4444; }
+.dot--yellow { background: #F59E0B; }
+.dot--green  { background: #10B981; }
+
+.logica__filename {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #6B7280;
+}
+
+.logica__code-block pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.logica__code {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #E2E8F0;
+    white-space: pre;
+}

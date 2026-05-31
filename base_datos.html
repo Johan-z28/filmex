@@ -5,74 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmex</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="base_datos.css">
     <link rel="icon" type="image/svg+xml" href="favicon/icon.svg">
 </head>
 
-<body>
+    <body>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="logo">
-            <img src="assets/filmex_logo.svg" alt="logo">
-        </div>
+        <!-- Header -->
+        <header class="header">
+            <a href="inicio.html" class="logo">
+                <img src="assets/filmex_logo.svg" alt="logo">
+            </a>
 
-        <nav class="d-flex align-items-center gap-2">
-            <ul class="nav__links">
-                <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="peliculas.html">Películas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="sobre_mi.html">Sobre mi</a></li>
-            </ul>
+            <nav class="d-flex align-items-center gap-2">
+                <ul class="nav__links">
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="peliculas.html">Películas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="sobre_mi.html">Sobre mí</a></li>
+                </ul>
 
-            <ul class="nav__cesde">
-                <li><a href="formulario.html">Formulario</a></li>
-                <li><a href="base_datos.html" class="selected">Base de Datos</a></li>
-                <li><a href="logica.html">Lógica</a></li>
-            </ul>
-        </nav>
+                <ul class="nav__cesde">
+                    <li><a href="formulario.html">Formulario</a></li>
+                    <li><a href="base_datos.html" class="selected">Base de Datos</a></li>
+                    <li><a href="logica.html">Lógica</a></li>
+                </ul>
+            </nav>
 
-        <div class="search">
-            <input type="text" class="search__input" placeholder="Buscar...">
-            <button class="search__btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="m21 21-4.35-4.35" />
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__top">
-            <div class="footer__left">
-                <div class="footer__logo">
-                    <img src="assets/filmex_logo.svg" alt="logo">
-                </div>
-                <a href="#">Información legal</a>
-                <a href="#">Contáctenos para PQRS</a>
-                <a href="#">Preguntas frecuentes</a>
+            <div class="search">
+                <input type="text" class="search__input" placeholder="Buscar...">
+                <button class="search__btn" aria-label="Buscar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </button>
             </div>
+        </header>
 
-            <div class="footer__right">
-                <h2>Suscríbete y se un Film-Fans</h2>
-                <form action="">
-                    <label for="lcorreo">Conoce los descuentos que tenemos para ti.</label>
-                    <div class="footer__row">
-                        <input type="email" name="correo" id="lcorreo" placeholder="Escribe tu correo...">
-                        <button type="submit">Suscribirse</button>
+        <!-- MER -->
+        <main class="mer">
+            <h1 class="page-title">Modelo Entidad–Relación</h1>
+            <p class="page-subtitle">Estructura y script SQL del sistema Filmex.</p>
+
+            <div class="content-grid">
+
+                <div class="card card-full">
+                    <p class="card-label">Diagrama MER</p>
+                    <div class="mer-placeholder">
+                        <img src="img/MER.png" alt="Modelo Entidad Relación">
                     </div>
-                </form>
+                </div>
+
+                <div class="card card-full">
+                    <p class="card-label">Script SQL</p>
+                    <pre>CREATE DATABASE db_Filmex;
+USE db_Filmex;
+
+CREATE TABLE tbl_customers (
+  id_customers     INT          AUTO_INCREMENT PRIMARY KEY,
+  date_created     TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+  full_name        VARCHAR(150) NOT NULL,
+  email            VARCHAR(80)  UNIQUE NULL,
+  telephone        VARCHAR(10)  NULL,
+  id_genders       CHAR(1)      NOT NULL,
+  birthdate        DATE         NOT NULL,
+  id_typeCustomers INT          NOT NULL,
+
+  FOREIGN KEY (id_genders)
+  REFERENCES tbl_genders(id_genders),
+  FOREIGN KEY (id_typeCustomers)
+  REFERENCES tbl_typeCustomers(id_typeCustomers)
+);</pre>
+                </div>
+
             </div>
-        </div>
+        </main>
 
-        <div class="footer__center">
-            <p>Derechos reservados © 2025 Filmex</p>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer__top">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+                <div class="footer__left">
+                    <div class="footer__logo">
+                        <img src="assets/filmex_logo.svg" alt="logo">
+                    </div>
+                    <a href="#">Información legal</a>
+                    <a href="#">Contáctenos para PQRS</a>
+                    <a href="#">Preguntas frecuentes</a>
+                    <div class="footer__redes">
+                        <a href="https://www.facebook.com"><img src="img/facebook.png" alt="facebook"></a>
+                        <a href="https://www.instagram.com"><img src="img/instagram.png" alt="instagram"></a>
+                        <a href="mailto:jzapata12345@cesde.net"><img src="img/email.png" alt="email"></a>
+                    </div>
+                </div>
 
-</html>
+                <div class="footer__contacto">
+                    <h2>Contacto</h2>
+                    <p>📧 jzapata12345@cesde.net</p>
+                    <p>📞 +57 304 202 0579</p>
+                </div>
+
+                <div class="footer__right">
+                    <h2>Suscríbete y se un Film-Fans</h2>
+                    <form action="">
+                        <label for="lcorreo">Conoce los descuentos que tenemos para ti.</label>
+                        <div class="footer__row">
+                            <input type="email" name="correo" id="lcorreo" placeholder="Escribe tu correo...">
+                            <button type="submit">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer__center">
+                <p>Derechos reservados © 2026 Filmex</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+    </html>
